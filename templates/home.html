@@ -1,0 +1,307 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket_Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+
+</head>
+
+<body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+<!--                <a class="navbar-brand" href="/"><center>Ticket Prediction</center></a>-->
+                <a class="navbar-brand" href="/"><h1 style="text-align:center">&#6158;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ticket Closing Time Prediction</h1></a>
+<!--                <p><h1 style="text-align:center"> title</h1></p>-->
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+    <div class="container">
+        <form action="\predict" method="post">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Opened At</h5>
+                            <!-- Departure -->
+                            <input type="date" name="opened" id="opened" required="required">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Vendor</h5>
+                            <!-- Destination -->
+                            <select name="Vendor" id="Vendor">
+                                <option value="Vendor_1">Vendor 1</option>
+                                <option value="Vendor_2">Vendor 2</option>
+                                <option value="Vendor_3">Vendor 3</option>
+                                <option value="code_8s">code 8s</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Incident State</h5>
+                            <select name="Incident_State" id="Incident_State" >
+                                <option value="Active">Active</option>
+                                <option value="Closed">Closed</option>
+                                <option value="New">New</option>
+                                <option value="Resolved">Resolved</option>
+                                <option value="Awaiting_User_Info">Awaiting User Info</option>
+                                <option value="Awaiting_Vendor">Awaiting Vendor</option>
+                                <option value="Awaiting_Problem">Awaiting Problem</option>
+                                <option value="Awaiting_Evidence">Awaiting Evidence</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Active Status</h5>
+                            <select name="Active_Status" id="Active_Status">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Made SLA</h5>
+                            <select name="Made_SLA" id="Made_SLA" >
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Contact Type</h5>
+                            <!-- Destination -->
+                            <select name="Contact_Type" id="Contact_Type" >
+                                <option value="Phone">Phone</option>
+                                <option value="Email">Email</option>
+                                <option value="IVR">IVR</option>
+                                <option value="Direct_opening">Direct opening</option>
+                                <option value="Self_service">Self service</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Impact</h5>
+                            <select name="Impact" id="Impact">
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            <br>
+            <br>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Urgency</h5>
+                            <!-- Destination -->
+                            <select name="Urgency" id="Urgency">
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Priority</h5>
+                            <select name="Priority" id="Priority">
+                                <option value="Moderate">Moderate</option>
+                                <option value="Low">Low</option>
+                                <option value="High">High</option>
+                                <option value="Critical">Critical</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Knowledge</h5>
+                            <!-- Destination -->
+                            <select name="Knowledge" id="Knowledge" required="required">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Notify</h5>
+                            <!-- Destination -->
+                            <select name="Notify" id="Notify" >
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Priority Confirmation</h5>
+                            <!-- Destination -->
+                            <select name="Priority_Confirmation" id="Priority_Confirmation">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="row">
+               <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Location</h5>
+                            <select name="Location" id="Location">
+                                <option value="Location_204">Location 204</option>
+                                <option value="Location_161">Location 161</option>
+                                <option value="Location_143">Location 143</option>
+                                <option value="Location_108">Location 108</option>
+                                <option value="Location_93">Location 93</option>
+                                <option value="Location_51">Location 51</option>
+                                <option value="Location_others">Location others</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Number of Update in Incident</h5>
+<!--                            <select type="number" id="sys_mod_count" required="required">-->
+<!--                            </select>-->
+
+<!--                            <label for="sys_mod_count">Total Number of Incidents Update</label>-->
+
+                            <input type="number" id="sys_mod_count" name="sys_mod_count">
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{Prediction}}</h3>
+
+        <br>
+        <br>
+        <p>©2021 Sachin</p>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
